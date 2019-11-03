@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Restorant_locator &#8212; Challenge Demo 1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Users" href="users.html" />
+    <link rel="prev" title="About project" href="about-project.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="restorant-locator">
+<h1>Restorant_locator<a class="headerlink" href="#restorant-locator" title="Permalink to this headline">¶</a></h1>
+<p>API for restaurants
+Idea behind that API is that we have Restaurant model, which have these fields</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>name</p></li>
+<li><p>address</p></li>
+<li><p>location</p></li>
+<li><p>created</p></li>
+<li><p>modifed</p></li>
+</ul>
+</div></blockquote>
+<p>This is how it goes, when you got Access Token from endppoint of users app. User
+can submit POST to /api/restaurants with token and data. Data should have name and address,
+after that based on address it will get coordinates from google and will saved them in
+POINT (lan lng) -format to location fields.</p>
+<p>After that we can calculate distance if user submit address (converting address to lan, lng as well).</p>
+<div class="section" id="endpoints-for-testing-need-access-token-more-on-users-module">
+<h2>Endpoints for testing (need Access Token, more on users module)<a class="headerlink" href="#endpoints-for-testing-need-access-token-more-on-users-module" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>GET  /api/restaurants - all restaraunts</p></li>
+<li><p>POST /api/restaurants - add restaurant</p></li>
+<li><p>GET  /api/restaurants?lat=60.1704534&amp;lng=24.9386902 - return restaurants with distance in meters</p></li>
+<li><p>GET /api/restaurants/&lt;int:pk&gt; - return one restaurant</p></li>
+<li><p>PUT /api/restaurants/&lt;int:pk&gt; - will update restaurant</p></li>
+</ul>
+<p>data = {“name”: “Restarant name”, “address”: “Some Address”}</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Challenge Demo</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about-project.html">About project</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Restorant_locator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#endpoints-for-testing-need-access-token-more-on-users-module">Endpoints for testing (need Access Token, more on users module)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="users.html">Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_app.html">Web_app</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="about-project.html" title="previous chapter">About project</a></li>
+      <li>Next: <a href="users.html" title="next chapter">Users</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Roman Mikstais.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/modules/restorant_locator.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
